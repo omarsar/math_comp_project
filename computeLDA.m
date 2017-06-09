@@ -9,7 +9,13 @@ function computeLDA(nf,nk,n,fileName, K, titleText, legendTitle,lo)
     %nf=8; n=45; nk=15;                    % nf features, n patterns
     d = nf;
     L(1)=nk;  L(2)=nk*2;  L(3)=nk*3;      % L(3)= n
-    fgetl(fin); fgetl(fin); fgetl(fin);   % skip 3 header lines
+   
+    if strcmp (fileName, "seeds_dataset.txt")
+        passit = 0;
+    else
+        fgetl(fin); fgetl(fin); fgetl(fin);   % skip 3 header lines
+    endif
+    
     A=fscanf(fin,'%f',[1+nf n]); A=A';    % read input data 
     X=A(:,1:nf);                            
     
