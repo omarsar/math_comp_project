@@ -1,4 +1,4 @@
-function plotKmeans(X,k, d, titleName)
+function plotKmeans(X,k, d, titleName, legendTitle, lo)
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     % Plot the Kmeans given matrix X and k clusters
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -16,7 +16,7 @@ function plotKmeans(X,k, d, titleName)
     plot3( predX(predX(:,d+1)==3, 1), predX(predX(:,d+1)==3, 2), predX(predX(:,d+1)==3, 3), 'rx', 'lineWidth', 5);
     
     set(gca, 'linewidth',4, 'fontsize', 13);
-    legend('8','O','X', 'location', 'northwest' ,'orientation','horizontal');
+    legend(legendTitle, 'location', lo );
     title(titleName)
     
     k

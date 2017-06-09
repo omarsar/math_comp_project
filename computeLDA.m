@@ -1,4 +1,4 @@
-function computeLDA(nf,nk,n,fileName, K, titleText, legendTitle)
+function computeLDA(nf,nk,n,fileName, K, titleText, legendTitle,lo)
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     % compputeLDA.m - Linear Discriminant Projection for a given dataset data
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -63,7 +63,7 @@ function computeLDA(nf,nk,n,fileName, K, titleText, legendTitle)
     X2=Y(1+L(1):L(2),1); Y2=Y(1+L(1):L(2),K);
     X3=Y(1+L(2):L(3),1); Y3=Y(1+L(2):L(3),K);
     plot(X1,Y1,'d',X2,Y2,'o',X3,Y3,'x','markersize',10, 'lineWidth', 5);
-    legend(legendTitle)
+    legend(legendTitle, 'location',lo)
     set(gca, 'linewidth',4, 'fontsize', 13);
     title(titleText);
     % axis([2 24 -2 20]); grid;
